@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>German 1 — Complete Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --surface2: #242424;
+    --border: #2e2e2e;
+    --gold: #e8c97a;
+    --gold-light: #f5e0a0;
+    --text: #f0ede8;
+    --muted: #888;
+    --green: #5dbf8a;
+    --red: #e06b6b;
+    --blue: #6baee0;
+    --purple: #a889e0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 2rem 1rem 4rem;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+
+  .hero {
+    text-align: center;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #0f0f0f;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: 99px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--gold);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .hero p { color: var(--muted); font-size: 14px; }
+
+  .section {
+    margin-bottom: 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .section-header {
+    background: var(--surface2);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-num {
+    background: var(--gold);
+    color: #0f0f0f;
+    font-weight: 700;
+    font-size: 13px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gold-light);
+  }
+  .section-body { padding: 1.25rem 1.5rem; }
+
+  table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; }
+  th {
+    background: var(--surface2);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 14px;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.03); }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .b-gold { background: rgba(232,201,122,0.15); color: var(--gold); border: 1px solid rgba(232,201,122,0.3); }
+  .b-green { background: rgba(93,191,138,0.15); color: var(--green); border: 1px solid rgba(93,191,138,0.3); }
+  .b-blue { background: rgba(107,174,224,0.15); color: var(--blue); border: 1px solid rgba(107,174,224,0.3); }
+  .b-red { background: rgba(224,107,107,0.15); color: var(--red); border: 1px solid rgba(224,107,107,0.3); }
+  .b-purple { background: rgba(168,137,224,0.15); color: var(--purple); border: 1px solid rgba(168,137,224,0.3); }
+
+  .code-block {
+    background: #111;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--green);
+    margin: 0.75rem 0;
+    line-height: 2;
+  }
+  .code-block span { color: var(--gold); }
+  .code-block .comment { color: var(--muted); }
+
+  .example-box {
+    background: rgba(232,201,122,0.07);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    font-size: 14px;
+  }
+  .example-box .de { color: var(--gold-light); font-weight: 500; }
+  .example-box .hi { color: var(--muted); font-size: 13px; }
+
+  .tip-box {
+    background: rgba(93,191,138,0.08);
+    border: 1px solid rgba(93,191,138,0.25);
+    border-radius: 10px;
+    padding: 0.875rem 1.1rem;
+    margin: 0.75rem 0;
+    font-size: 14px;
+    color: var(--green);
+  }
+  .tip-box strong { color: #7de0a8; }
+
+  .warn-box {
+    background: rgba(224,107,107,0.08);
+    border: 1px solid rgba(224,107,107,0.25);
+    border-radius: 10px;
+    padding: 0.875rem 1.1rem;
+    margin: 0.75rem 0;
+    font-size: 14px;
+    color: var(--red);
+  }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0.75rem 0; }
+  .mini-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.875rem 1rem;
+  }
+  .mini-card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .mini-card .val { font-size: 15px; font-weight: 600; color: var(--gold-light); }
+  .mini-card .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  h3 { font-size: 14px; font-weight: 600; color: var(--gold); margin: 1rem 0 0.5rem; }
+  p { color: var(--text); margin: 0.4rem 0; font-size: 14px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .footer .big { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--gold); display: block; margin-bottom: 4px; }
+
+  @media (max-width: 600px) {
+    .grid2 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="hero-badge">📚 Exam Ready Notes</div>
+    <h1>German 1<br>Complete Notes</h1>
+    <p>MCA German Paper — सभी Topics हिंदी में | उद्या Paper आहे 💪</p>
+  </div>
+
+  <!-- SECTION 1: Personal Pronouns -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title">Personal Pronouns (सर्वनाम) — Ich, Du, Er...</div>
+    </div>
+    <div class="section-body">
+      <p>ये वो शब्द हैं जो <strong>बताते हैं कि कौन काम कर रहा है</strong> — जैसे मराठी में मी, तू, तो, ती...</p>
+      <table>
+        <thead><tr><th>German</th><th>हिंदी/मराठी</th><th>Ending</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge b-gold">ich</span></td><td>मी / मैं</td><td><strong style="color:var(--green)">-e</strong></td><td>Ich wohn<strong>e</strong> in Pune</td></tr>
+          <tr><td><span class="badge b-blue">du</span></td><td>तू / तुम</td><td><strong style="color:var(--green)">-st</strong></td><td>Du wohn<strong>st</strong> in Delhi</td></tr>
+          <tr><td><span class="badge b-red">er / sie / es</span></td><td>वो (वह) / तो / ती</td><td><strong style="color:var(--green)">-t</strong></td><td>Sie wohn<strong>t</strong> in Mumbai</td></tr>
+          <tr><td><span class="badge b-purple">wir</span></td><td>हम / आम्ही</td><td><strong style="color:var(--green)">-en</strong></td><td>Wir wohn<strong>en</strong> in Berlin</td></tr>
+          <tr><td><span class="badge b-blue">ihr</span></td><td>तुम सब / तुम्ही</td><td><strong style="color:var(--green)">-t</strong></td><td>Ihr wohn<strong>t</strong> in Köln</td></tr>
+          <tr><td><span class="badge b-gold">Sie (formal)</span></td><td>आप</td><td><strong style="color:var(--green)">-en</strong></td><td>Sie wohn<strong>en</strong> in Hamburg</td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">
+        <span>TRICK:</span><br>
+        ich  → <span>-e</span>    <span class="comment">← सबसे आसान!</span><br>
+        du   → <span>-st</span>   <span class="comment">← s + t याद रखो</span><br>
+        er/sie → <span>-t</span>  <span class="comment">← सिर्फ t</span><br>
+        wir  → <span>-en</span>   <span class="comment">← पूरा verb</span><br>
+        Sie  → <span>-en</span>   <span class="comment">← formal = wir जैसा</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: Verb Conjugation -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title">Verb Conjugation — Endings कैसे लगाएं</div>
+    </div>
+    <div class="section-body">
+      <p><strong style="color:var(--gold)">Formula:</strong> Verb से <strong>-en हटाओ</strong> → Stem मिलता है → फिर Ending लगाओ</p>
+
+      <h3>🟢 Regular Verbs (साधे / आसान)</h3>
+      <table>
+        <thead><tr><th>Verb</th><th>अर्थ</th><th>Stem</th><th>Ich</th><th>Du</th><th>Er/Sie</th></tr></thead>
+        <tbody>
+          <tr><td>wohnen</td><td>राहणे / रहना</td><td>wohn</td><td>wohne</td><td>wohnst</td><td>wohnt</td></tr>
+          <tr><td>kommen</td><td>येणे / आना</td><td>komm</td><td>komme</td><td>kommst</td><td>kommt</td></tr>
+          <tr><td>machen</td><td>करणे / करना</td><td>mach</td><td>mache</td><td>machst</td><td>macht</td></tr>
+          <tr><td>hören</td><td>ऐकणे / सुनना</td><td>hör</td><td>höre</td><td>hörst</td><td>hört</td></tr>
+          <tr><td>spielen</td><td>खेळणे / खेलना</td><td>spiel</td><td>spiele</td><td>spielst</td><td>spielt</td></tr>
+          <tr><td>lernen</td><td>शिकणे / सीखना</td><td>lern</td><td>lerne</td><td>lernst</td><td>lernt</td></tr>
+          <tr><td>kaufen</td><td>विकत घेणे / खरीदना</td><td>kauf</td><td>kaufe</td><td>kaufst</td><td>kauft</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🔴 Irregular Verbs (थोड़े अलग — ध्यान से!)</h3>
+      <table>
+        <thead><tr><th>Verb</th><th>अर्थ</th><th>Ich</th><th>Du</th><th>Er/Sie</th></tr></thead>
+        <tbody>
+          <tr><td>sprechen</td><td>बोलना</td><td>spreche</td><td><strong style="color:var(--red)">sprichst</strong></td><td><strong style="color:var(--red)">spricht</strong></td></tr>
+          <tr><td>heißen</td><td>नाम होना</td><td>heiße</td><td>heißt</td><td>heißt</td></tr>
+          <tr><td>lesen</td><td>पढ़ना</td><td>lese</td><td><strong style="color:var(--red)">liest</strong></td><td><strong style="color:var(--red)">liest</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="warn-box">⚠️ sprechen में Du/Er के लिए "e→i" हो जाता है! sprichst, spricht — याद रखो!</div>
+
+      <h3>⭐ Sein & Haben — सबसे Important!</h3>
+      <div class="grid2">
+        <div class="mini-card">
+          <div class="label">sein = होना / असणे</div>
+          <div style="margin-top:8px; font-size:13px; line-height:2;">
+            Ich → <strong style="color:var(--gold)">bin</strong><br>
+            Du → <strong style="color:var(--gold)">bist</strong><br>
+            Er/Sie → <strong style="color:var(--gold)">ist</strong><br>
+            Wir → <strong style="color:var(--gold)">sind</strong>
+          </div>
+        </div>
+        <div class="mini-card">
+          <div class="label">haben = होना / असणे (have)</div>
+          <div style="margin-top:8px; font-size:13px; line-height:2;">
+            Ich → <strong style="color:var(--blue)">habe</strong><br>
+            Du → <strong style="color:var(--blue)">hast</strong><br>
+            Er/Sie → <strong style="color:var(--blue)">hat</strong><br>
+            Wir → <strong style="color:var(--blue)">haben</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <div class="de">Ich bin Student. / Ich bin Ärztin.</div>
+        <div class="hi">मैं छात्र हूँ। / मैं डॉक्टर हूँ।</div>
+      </div>
+      <div class="example-box">
+        <div class="de">Ich habe ein Buch. / Du hast ein Auto.</div>
+        <div class="hi">मेरे पास एक किताब है। / तेरे पास एक गाड़ी है।</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: W-Questions -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title">W-Fragen — Question Words (प्रश्नवाचक शब्द)</div>
+    </div>
+    <div class="section-body">
+      <table>
+        <thead><tr><th>W-Word</th><th>अर्थ</th><th>किसके लिए</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge b-gold">Wie</span></td><td>कसे / कैसे</td><td>नाम पूछना</td><td>Wie heißt du? → तुझं नाव काय?</td></tr>
+          <tr><td><span class="badge b-blue">Wo</span></td><td>कुठे / कहाँ</td><td>Location पूछना</td><td>Wo wohnen Sie? → आप कहाँ रहते हैं?</td></tr>
+          <tr><td><span class="badge b-green">Woher</span></td><td>कुठून / कहाँ से</td><td>Origin पूछना</td><td>Woher kommen Sie? → आप कहाँ से हैं?</td></tr>
+          <tr><td><span class="badge b-red">Was</span></td><td>काय / क्या</td><td>चीज़ पूछना</td><td>Was machst du? → तू क्या करता है?</td></tr>
+          <tr><td><span class="badge b-purple">Wer</span></td><td>कोण / कौन</td><td>व्यक्ति पूछना</td><td>Wer ist das? → यह कौन है?</td></tr>
+          <tr><td><span class="badge b-blue">Welche</span></td><td>कोणता / कौन सा</td><td>चुनाव</td><td>Welche Sprachen? → कौन सी भाषाएँ?</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box">
+        <strong>Quick Trick:</strong><br>
+        Wo → wohnen (राहणे/रहना)<br>
+        Woher → kommen (येणे/आना)<br>
+        Wie → heißen (नाव/नाम)
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: Articles -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title">Articles — der, die, das (लिंग)</div>
+    </div>
+    <div class="section-body">
+      <p>जर्मन में हर noun का एक gender होता है — Masculine, Feminine, Neuter</p>
+      <div class="grid2">
+        <div class="mini-card">
+          <div class="label">Masculine (पुल्लिंग)</div>
+          <div class="val">der</div>
+          <div class="sub">der Mann (आदमी), der Vater (पिता)</div>
+        </div>
+        <div class="mini-card">
+          <div class="label">Feminine (स्त्रीलिंग)</div>
+          <div class="val">die</div>
+          <div class="sub">die Frau (औरत), die Mutter (माँ)</div>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="mini-card">
+          <div class="label">Neuter (नपुंसकलिंग)</div>
+          <div class="val">das</div>
+          <div class="sub">das Kind (बच्चा), das Buch (किताब)</div>
+        </div>
+        <div class="mini-card">
+          <div class="label">Plural (बहुवचन)</div>
+          <div class="val">die</div>
+          <div class="sub">die Bücher (किताबें), die Kinder (बच्चे)</div>
+        </div>
+      </div>
+      <div class="example-box">
+        <div class="de">Das ist ein Buch. / Das ist eine Tasse.</div>
+        <div class="hi">यह एक किताब है। / यह एक कप है।</div>
+      </div>
+      <div class="tip-box"><strong>याद रखो:</strong> ein = a/an (Masc/Neuter) | eine = a/an (Feminine)</div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: Modal Verbs -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title">Modal Verbs — können, müssen, wollen</div>
+    </div>
+    <div class="section-body">
+      <p>ये special verbs हैं जो <strong>ability, necessity, या wish</strong> दिखाते हैं।</p>
+      <table>
+        <thead><tr><th>Modal Verb</th><th>अर्थ</th><th>Ich</th><th>Du</th><th>Er/Sie</th><th>Wir</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge b-green">können</span></td><td>सकना / शकणे</td><td>kann</td><td>kannst</td><td>kann</td><td>können</td></tr>
+          <tr><td><span class="badge b-red">müssen</span></td><td>चाहिए / पाहिजे</td><td>muss</td><td>musst</td><td>muss</td><td>müssen</td></tr>
+          <tr><td><span class="badge b-blue">wollen</span></td><td>चाहना / हवे</td><td>will</td><td>willst</td><td>will</td><td>wollen</td></tr>
+        </tbody>
+      </table>
+      <div class="example-box">
+        <div class="de">Ich kann Deutsch sprechen.</div>
+        <div class="hi">मैं जर्मन बोल सकता हूँ। / मी जर्मन बोलू शकतो।</div>
+      </div>
+      <div class="example-box">
+        <div class="de">Ich muss lernen.</div>
+        <div class="hi">मुझे पढ़ना चाहिए। / मला शिकायला पाहिजे।</div>
+      </div>
+      <div class="example-box">
+        <div class="de">Ich will Musik hören.</div>
+        <div class="hi">मैं संगीत सुनना चाहता हूँ।</div>
+      </div>
+      <div class="tip-box"><strong>Rule:</strong> Modal verb sentence में second verb always LAST आता है और base form में रहता है!</div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: Sentence Formation -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title">Sentence Formation — Vakya kasa banvaycha</div>
+    </div>
+    <div class="section-body">
+      <p>German sentence में verb हमेशा <strong>दूसरी position</strong> पर होता है!</p>
+      <div class="code-block">
+        <span>Normal:</span>  Subject → Verb → Rest<br>
+        <span class="comment">Ich wohne in Pune.</span><br><br>
+        <span>Question:</span> Verb → Subject → Rest<br>
+        <span class="comment">Wohnst du in Pune?</span><br><br>
+        <span>W-Question:</span> W-Word → Verb → Subject<br>
+        <span class="comment">Wo wohnst du?</span>
+      </div>
+      <h3>Common Sentences — Paper में आ सकते हैं</h3>
+      <div class="example-box">
+        <div class="de">Ich heiße Rahul. Ich komme aus Nagpur. Ich wohne in Pune.</div>
+        <div class="hi">मेरा नाम राहुल है। मैं नागपुर से हूँ। मैं पुणे में रहता हूँ।</div>
+      </div>
+      <div class="example-box">
+        <div class="de">Ich spreche Deutsch, Hindi und Englisch.</div>
+        <div class="hi">मैं जर्मन, हिंदी और अंग्रेजी बोलता हूँ।</div>
+      </div>
+      <div class="example-box">
+        <div class="de">Ich bin Student. Ich lerne Deutsch.</div>
+        <div class="hi">मैं छात्र हूँ। मैं जर्मन सीखता हूँ।</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: Family & Hobbies -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title">Family & Hobbies — परिचय कसा द्यायचा</div>
+    </div>
+    <div class="section-body">
+      <div class="grid2">
+        <div>
+          <h3>👨‍👩‍👧 Family Words</h3>
+          <table>
+            <thead><tr><th>German</th><th>अर्थ</th></tr></thead>
+            <tbody>
+              <tr><td>der Vater</td><td>पिता / बाबा</td></tr>
+              <tr><td>die Mutter</td><td>माँ / आई</td></tr>
+              <tr><td>der Bruder</td><td>भाई</td></tr>
+              <tr><td>die Schwester</td><td>बहन</td></tr>
+              <tr><td>die Familie</td><td>परिवार</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3>🎯 Hobbies Words</h3>
+          <table>
+            <thead><tr><th>German</th><th>अर्थ</th></tr></thead>
+            <tbody>
+              <tr><td>Musik hören</td><td>संगीत सुनना</td></tr>
+              <tr><td>Badminton spielen</td><td>बैडमिंटन खेलना</td></tr>
+              <tr><td>lesen</td><td>पढ़ना</td></tr>
+              <tr><td>kochen</td><td>खाना बनाना</td></tr>
+              <tr><td>reisen</td><td>घूमना</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="example-box">
+        <div class="de">Meine Hobbys sind Musik hören und Badminton spielen.</div>
+        <div class="hi">मेरे शौक हैं संगीत सुनना और बैडमिंटन खेलना।</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 8: Numbers & Time -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <div class="section-title">Numbers & Time (Uhrzeit) — वेळ कसा सांगायचा</div>
+    </div>
+    <div class="section-body">
+      <div class="grid2">
+        <div>
+          <h3>🔢 Numbers 1-12</h3>
+          <table>
+            <thead><tr><th>Number</th><th>German</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>eins</td></tr>
+              <tr><td>2</td><td>zwei</td></tr>
+              <tr><td>3</td><td>drei</td></tr>
+              <tr><td>4</td><td>vier</td></tr>
+              <tr><td>5</td><td>fünf</td></tr>
+              <tr><td>6</td><td>sechs</td></tr>
+              <tr><td>7</td><td>sieben</td></tr>
+              <tr><td>8</td><td>acht</td></tr>
+              <tr><td>9</td><td>neun</td></tr>
+              <tr><td>10</td><td>zehn</td></tr>
+              <tr><td>11</td><td>elf</td></tr>
+              <tr><td>12</td><td>zwölf</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3>🕐 Time (Uhrzeit)</h3>
+          <div class="example-box">
+            <div class="de">Es ist drei Uhr.</div>
+            <div class="hi">तीन बजे हैं।</div>
+          </div>
+          <div class="example-box">
+            <div class="de">Es ist halb vier.</div>
+            <div class="hi">साढ़े तीन बजे हैं। (3:30)</div>
+          </div>
+          <div class="example-box">
+            <div class="de">Wie spät ist es?</div>
+            <div class="hi">कितने बजे हैं?</div>
+          </div>
+          <div class="tip-box" style="margin-top:8px;">
+            <strong>halb = half before</strong><br>
+            halb vier = 3:30 (four से आधा घंटा पहले)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 9: Writing Tips -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <div class="section-title">Writing (Schreiben) — Email/Letter कसा लिहायचा</div>
+    </div>
+    <div class="section-body">
+      <p>6 marks साठी एक छोटा email किंवा letter येऊ शकतो। हे structure वापर:</p>
+      <div class="code-block">
+        <span>Liebe/Lieber [Name],</span>   <span class="comment">← Dear (Liebe = female, Lieber = male)</span><br><br>
+        <span>Ich heiße ___.</span>          <span class="comment">← माझं नाव</span><br>
+        <span>Ich komme aus ___.</span>       <span class="comment">← मी कुठून</span><br>
+        <span>Ich wohne in ___.</span>        <span class="comment">← मी कुठे राहतो</span><br>
+        <span>Ich spreche ___.</span>         <span class="comment">← मी कोणत्या भाषा</span><br>
+        <span>Meine Hobbys sind ___.</span>   <span class="comment">← माझे छंद</span><br><br>
+        <span>Mit freundlichen Grüßen,</span> <span class="comment">← Regards / धन्यवाद</span><br>
+        <span>[तुझं नाव]</span>
+      </div>
+      <div class="tip-box"><strong>Tip:</strong> 6 marks = कमीत कमी 5-6 sentences लिही! Verb endings बरोबर लाव!</div>
+    </div>
+  </div>
+
+  <!-- SECTION 10: Master Cheat Sheet -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">⚡</div>
+      <div class="section-title">Master Cheat Sheet — Paper मध्ये blank दिसला की हे कर!</div>
+    </div>
+    <div class="section-body">
+      <div class="code-block">
+        <span>Step 1 →</span> कोण आहे? (Ich / Du / Sie / Er)<br>
+        <span>Step 2 →</span> Hint काय आहे sentence मध्ये?<br><br>
+        <span class="comment">  aus दिसला   → kommen वापर</span><br>
+        <span class="comment">  in दिसला    → wohnen वापर</span><br>
+        <span class="comment">  Wie दिसला   → heißen वापर</span><br>
+        <span class="comment">  Sprachen    → sprechen वापर</span><br>
+        <span class="comment">  gern Musik  → hören वापर</span><br>
+        <span class="comment">  Student/Arzt→ sein वापर (bin/bist/ist)</span><br><br>
+        <span>Step 3 →</span> Ending लाव:<br>
+        <span class="comment">  Ich  → -e</span><br>
+        <span class="comment">  Du   → -st</span><br>
+        <span class="comment">  Sie  → -t</span>
+      </div>
+      <div class="tip-box"><strong>Wo → wohnen | Woher → kommen | Wie → heißen</strong><br>हे तीन W-words याद असले तरी paper solve होतो!</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="big">Viel Erfolg! 🎯</span>
+    उद्याच्या paper साठी All the Best! तू नक्की करशील! 💪
+  </div>
+
+</div>
+</body>
+</html>
